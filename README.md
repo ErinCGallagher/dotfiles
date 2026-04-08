@@ -92,7 +92,7 @@ The `claude/` directory contains a custom Claude Code setup:
 
 - **`CLAUDE.md`** — personal coding preferences, git practices, and debugging process that Claude follows in every session
 - **`statusline.sh`** — custom status line showing current model, context window usage, and 5h/7d token rate limit bars
-- **`commands/`** — custom slash commands (brainstorm, plan, session-summary, find-missing-tests)
+- **`commands/`** — custom slash commands (session-summary)
 
 The entire `claude/` directory is symlinked to `~/.claude/` by the install script.
 
