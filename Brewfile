@@ -25,4 +25,4 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
 # Fonts (for starship themes with nerd font icons)
-# cask "font-fira-code-nerd-font"
+cask "font-jetbrains-mono-nerd-font"

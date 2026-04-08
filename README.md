@@ -39,13 +39,7 @@ cat ~/.ssh/id_ed25519.pub
 
 Paste the output as the `signingkey` value above.
 
-3. *(Optional)* Add work-specific config to `private/work.zsh` — this file is gitignored and will be sourced automatically:
-
-```zsh
-# private/work.zsh — machine-specific PATH entries, secrets, work aliases, etc.
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export GITHUB_TOKEN=...
-```
+3. *(Optional)* Create `private/work.zsh` for machine-specific config — see [Private Configuration](#private-configuration) below.
 
 4. Run the installation script:
 
@@ -90,6 +84,35 @@ mise install
 - 📋 **jq** - JSON processor
 - 🌲 **tree** - Directory listing
 - 🤖 **Claude Code** - agentic coding tool
+
+## Claude Code
+
+The `claude/` directory contains a custom Claude Code setup:
+
+- **`CLAUDE.md`** — personal coding preferences, git practices, and debugging process that Claude follows in every session
+- **`statusline.sh`** — custom status line showing current model, context window usage, and 5h/7d token rate limit bars
+- **`commands/`** — custom slash commands (brainstorm, plan, session-summary, find-missing-tests)
+
+The entire `claude/` directory is symlinked to `~/.claude/` by the install script.
+
+## Private Configuration
+
+Machine-specific or sensitive config goes in `private/work.zsh` — this file is gitignored and never committed. The install script symlinks it to `~/.private.zsh`, which `.zshrc` sources automatically if it exists.
+
+Typical contents:
+
+```zsh
+# PATH additions for locally installed tools
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# Work credentials and tokens
+export GITHUB_TOKEN=...
+export AWS_PROFILE=my-profile
+```
+
+## Fonts
+
+This setup uses **JetBrains Mono Nerd Font** (installed via Brewfile) for proper icon rendering in Ghostty and the Starship prompt. After running `brew bundle`, the font will be available — you may need to restart your terminal for it to take effect.
 
 ## Troubleshooting
 
