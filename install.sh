@@ -115,6 +115,7 @@ main() {
     log "Next steps:"
     log "1. Restart your terminal or run: source ~/.zshrc"
     log "2. Install mise-managed tools: mise install"
+    log "3. Open Ghostty to check out your new config!"
     log ""
     if [[ -d "$BACKUP_DIR" ]]; then
         log "Your original files were backed up to: $BACKUP_DIR"
