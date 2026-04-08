@@ -10,7 +10,7 @@ Personal development environment configuration for macOS.
 - ⭐ **starship** - Custom prompt with Dracula theme + emojis 👸
 - 🔄 **mise** - Version manager for dev tools
 - 👻 **ghostty** - Terminal emulator
-- 🖥️ **cmux** - Terminal multiplexer for managing panes and git worktrees
+- 🖥️ **cmux** - Terminal multiplexer for multitasking with AI agents and git worktrees
 - 🌳 **direnv** - Auto-load environment variables
 - 🔍 **fzf** - Fuzzy finder
 
@@ -21,7 +21,7 @@ Personal development environment configuration for macOS.
 - 📋 **jq** - JSON processor
 - 🌲 **tree** - Directory listing
 - 🤖 **Claude Code** - agentic coding tool
-- 💻 **VS Code** - editor with settings and extensions list
+- 💻 **VS Code** - stores settings and extensions list (doesn't download the application)
 
 **Manages config for:** zsh · git · [Starship](https://starship.rs) · [Ghostty](https://ghostty.org) · [Mise](https://mise.jdx.dev) · [Zed](https://zed.dev) · [VS Code](https://code.visualstudio.com) · [Claude Code](https://claude.ai/code)
 
