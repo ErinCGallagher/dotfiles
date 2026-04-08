@@ -1,0 +1,27 @@
+{
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "afterDelay",
+  "explorer.confirmDelete": false,
+  "editor.wordWrap": "on",
+  "claudeCode.preferredLocation": "panel",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "redhat.telemetry.enabled": false,
+  "jdk.telemetry.enabled": false,
+  "[go]": {
+    "breadcrumbs.showArrays": true,
+    "editor.defaultFormatter": "golang.go",
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false,
+  },
+  "files.associations": {
+    "*.go": "go",
+  },
+  "go.enableCodeLens": {
+    "runtest": true,
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "java.jdt.ls.java.home": "/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home",
+}

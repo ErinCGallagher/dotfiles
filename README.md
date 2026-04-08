@@ -116,6 +116,25 @@ export GITHUB_TOKEN=...
 export AWS_PROFILE=my-profile
 ```
 
+## VS Code
+
+VS Code configuration lives in `vscode/`.
+
+- **`settings.json`** — editor settings, symlinked to `~/Library/Application Support/Code/User/settings.json`
+- **`extensions.txt`** — list of extensions, installed automatically by `install.sh`
+
+To update the tracked extension list after installing new extensions:
+
+```bash
+/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --list-extensions > vscode/extensions.txt
+```
+
+To install extensions from the list manually:
+
+```bash
+while IFS= read -r ext; do code --install-extension "$ext"; done < vscode/extensions.txt
+```
+
 ## Ghostty
 
 Ghostty configuration lives in `ghostty/config`.
