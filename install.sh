@@ -55,7 +55,9 @@ main() {
     create_symlink "$DOTFILES_DIR/git/.gitignore_global" "$HOME/.gitignore_global"
 
     if [[ ! -f "$HOME/.gitconfig.user" ]]; then
-        echo "⚠️  ~/.gitconfig.user not found — see README for setup instructions"
+        log "Creating ~/.gitconfig.user from template..."
+        cp "$DOTFILES_DIR/git/user.gitconfig.template" "$HOME/.gitconfig.user"
+        echo "⚠️  Fill in your details in ~/.gitconfig.user (name, email, signingkey)"
     fi
 
     # Starship prompt

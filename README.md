@@ -21,27 +21,9 @@ git clone git@github.com:ErinCGallagher/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-2. Create `~/.gitconfig.user` with your git identity:
+2. *(Optional)* Create `private/work.zsh` for machine-specific config — see [Private Configuration](#private-configuration) below.
 
-```ini
-[user]
-  name = Your Name
-  email = your@email.com
-  signingkey = YOUR_SSH_SIGNING_KEY
-```
-
-To get your SSH signing key:
-
-```bash
-ssh-keygen -t ed25519 -C "your@email.com"
-cat ~/.ssh/id_ed25519.pub
-```
-
-Paste the output as the `signingkey` value above.
-
-3. *(Optional)* Create `private/work.zsh` for machine-specific config — see [Private Configuration](#private-configuration) below.
-
-4. Run the installation script:
+3. Run the installation script:
 
 ```bash
 ./install.sh
@@ -52,7 +34,26 @@ The script will:
 - Install all Homebrew dependencies from the Brewfile
 - Create symlinks for all configuration files
 - Back up any existing files before linking
+- Create `~/.gitconfig.user` from the template if it doesn't exist
 - Symlink `private/work.zsh` → `~/.private.zsh` if it exists
+
+4. Fill in your details in `~/.gitconfig.user`:
+
+```ini
+[user]
+  name = Your Name
+  email = your@email.com
+  signingkey = YOUR_SSH_SIGNING_KEY
+```
+
+You can Generate an SSH key for git commit signing:
+
+```bash
+ssh-keygen -t ed25519 -C "your@email.com"
+```
+
+The `signingkey` is the contents of `~/.ssh/id_ed25519.pub`.
+
 
 5. Restart your terminal or source the config:
 
