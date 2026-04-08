@@ -36,6 +36,7 @@ The script will:
 - Back up any existing files before linking
 - Create `~/.gitconfig.user` from the template if it doesn't exist
 - Symlink `private/work.zsh` → `~/.private.zsh` if it exists
+- Will ask you if you want to install [cmux](#terminal-cmux)
 
 4. Fill in your details in `~/.gitconfig.user`:
 
@@ -96,6 +97,10 @@ The `claude/` directory contains a custom Claude Code setup:
 
 The entire `claude/` directory is symlinked to `~/.claude/` by the install script.
 
+### Terminal: cmux
+
+[cmux](https://cmux.com/) is a terminal multiplexer that pairs well with Claude Code. It's great for managing git worktrees, running multiple AI agents in parallel, and general multitasking — keeping each context in its own pane or window without losing state.
+
 ## Private Configuration
 
 Machine-specific or sensitive config goes in `private/work.zsh` — this file is gitignored and never committed. The install script symlinks it to `~/.private.zsh`, which `.zshrc` sources automatically if it exists.
@@ -110,6 +115,26 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export GITHUB_TOKEN=...
 export AWS_PROFILE=my-profile
 ```
+
+## Ghostty
+
+Ghostty configuration lives in `ghostty/config`.
+
+### Changing the Theme
+
+To see all available built-in themes:
+
+```bash
+ghostty +list-themes
+```
+
+Update the theme by changing this line in `ghostty/config`:
+
+```
+theme = Carbonfox
+```
+
+Restart Ghostty for the change to take effect.
 
 ## Fonts
 

@@ -39,7 +39,7 @@ main() {
     # Install Homebrew dependencies
     if command -v brew &> /dev/null; then
         log "Installing Homebrew dependencies..."
-        brew bundle --file="$DOTFILES_DIR/Brewfile"
+        brew bundle --file="$DOTFILES_DIR/Brewfile" || echo "⚠️  Some Homebrew packages failed to install — continuing anyway"
     else
         echo "⚠️  Homebrew not found. Please install Homebrew first:"
         echo "   /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
@@ -71,7 +71,7 @@ main() {
 
     # Claude Code CLI
     if ! command -v claude &> /dev/null; then
-        read -p "🤖 Install Claude Code CLI? [y/N] " -n 1 -r
+        read -p "🤖 Install Claude Code CLI? [y/N] " -n 1 -r || true
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             log "Installing Claude Code CLI..."
@@ -81,6 +81,20 @@ main() {
         fi
     else
         log "Claude Code CLI already installed"
+    fi
+
+    # cmux
+    if [[ ! -d "/Applications/cmux.app" ]] && ! brew list --cask cmux &> /dev/null; then
+        read -p "🖥️  Install cmux? It's a Ghostty-built terminal great for multi-tasking AI agents and managing git worktrees. [y/N] " -n 1 -r || true
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            log "Installing cmux..."
+            brew install --cask cmux
+        else
+            log "Skipping cmux installation"
+        fi
+    else
+        log "cmux already installed"
     fi
 
     # Zed editor
@@ -101,7 +115,6 @@ main() {
     log "Next steps:"
     log "1. Restart your terminal or run: source ~/.zshrc"
     log "2. Install mise-managed tools: mise install"
-    log "3. If you use private configs, add them to the private/ directory"
     log ""
     if [[ -d "$BACKUP_DIR" ]]; then
         log "Your original files were backed up to: $BACKUP_DIR"
