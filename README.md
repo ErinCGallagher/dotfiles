@@ -2,6 +2,29 @@
 
 Personal development environment configuration for macOS.
 
+## What's Included?
+
+### Core Shell
+
+- 🐚 **zsh** - Shell with plugins (autosuggestions, syntax highlighting)
+- ⭐ **starship** - Custom prompt with Dracula theme + emojis 👸
+- 🔄 **mise** - Version manager for dev tools
+- 👻 **ghostty** - Terminal emulator
+- 🖥️ **cmux** - Terminal multiplexer for managing panes and git worktrees
+- 🌳 **direnv** - Auto-load environment variables
+- 🔍 **fzf** - Fuzzy finder
+
+### Development Tools
+
+- 🔀 **git** + **diff-so-fancy** - Version control with readable diffs
+- 🐙 **gh** - GitHub CLI
+- 📋 **jq** - JSON processor
+- 🌲 **tree** - Directory listing
+- 🤖 **Claude Code** - agentic coding tool
+- 💻 **VS Code** - editor with settings and extensions list
+
+**Manages config for:** zsh · git · [Starship](https://starship.rs) · [Ghostty](https://ghostty.org) · [Mise](https://mise.jdx.dev) · [Zed](https://zed.dev) · [VS Code](https://code.visualstudio.com) · [Claude Code](https://claude.ai/code)
+
 ### Terminal Prompt (Starship)
 ![Terminal prompt showing Starship configuration with Dracula theme](docs/terminal-config.png)
 
@@ -70,25 +93,6 @@ source ~/.zshrc
 ```bash
 mise install
 ```
-
-## What's Included?
-
-### Core Shell
-
-- 🐚 **zsh** - Shell with plugins (autosuggestions, syntax highlighting)
-- ⭐ **starship** - Custom prompt with Dracula theme + emojis 👸
-- 🔄 **mise** - Version manager for dev tools
-- 👻 **ghostty** - Terminal emulator
-- 🌳 **direnv** - Auto-load environment variables
-- 🔍 **fzf** - Fuzzy finder
-
-### Development Tools
-
-- 🔀 **git** + **diff-so-fancy** - Version control with readable diffs
-- 🐙 **gh** - GitHub CLI
-- 📋 **jq** - JSON processor
-- 🌲 **tree** - Directory listing
-- 🤖 **Claude Code** - agentic coding tool
 
 ## Claude Code
 
