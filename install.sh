@@ -54,22 +54,10 @@ main() {
     create_symlink "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
     create_symlink "$DOTFILES_DIR/git/.gitignore_global" "$HOME/.gitignore_global"
 
-    # Git user configuration (personal info)
-    if [[ ! -f "$DOTFILES_DIR/private/git/user.gitconfig" ]]; then
-        log "Creating user git config from template..."
-        mkdir -p "$DOTFILES_DIR/private/git"
-        if [[ -f "$DOTFILES_DIR/git/user.gitconfig.template" ]]; then
-            cp "$DOTFILES_DIR/git/user.gitconfig.template" "$DOTFILES_DIR/private/git/user.gitconfig"
-            echo "⚠️  Please edit $DOTFILES_DIR/private/git/user.gitconfig with your git user details"
-        else
-            error "Template file not found at $DOTFILES_DIR/git/user.gitconfig.template"
-        fi
+    if [[ ! -f "$HOME/.gitconfig.user" ]]; then
+        echo "⚠️  ~/.gitconfig.user not found — see README for setup instructions"
     fi
 
-    if [[ -f "$DOTFILES_DIR/private/git/user.gitconfig" ]]; then
-        create_symlink "$DOTFILES_DIR/private/git/user.gitconfig" "$HOME/.gitconfig.user"
-    fi
-    
     # Starship prompt
     create_symlink "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
 

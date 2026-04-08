@@ -61,3 +61,7 @@ docker_login_to_aws_ecr() {
 if [[ -f /Users/cchan/Workspace/dotfiles/private/work.zsh ]]; then
   source /Users/cchan/Workspace/dotfiles/private/work.zsh
 fi
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/opt/bison/bin:$PATH"

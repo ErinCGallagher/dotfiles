@@ -8,14 +8,14 @@ This is a **dotfiles repository** that manages personal development environment 
 
 ### Key Structure
 
-- `claude/` - Claude Code CLI configuration
 - `ghostty/` - Ghostty terminal configuration
-- `git/` - Git configuration files
 - `mise/` - Mise version manager configuration
-- `private/` - Private/sensitive configurations (e.g., work-specific settings)
-- `zed/` - Zed editor configuration
-- `zsh/` - Shell configuration and scripts
 - `starship/` - Starship prompt configuration
+- `zed/` - Zed editor configuration
+- `git/` - Git configuration
+- `claude/` - Claude Code configuration
+- `zsh/` - Shell configuration and scripts
+- `private/` - Private/sensitive configurations (e.g., work-specific settings)
 - `Brewfile` - Homebrew dependencies for the entire setup
 
 ## Common Development Commands
@@ -38,6 +38,7 @@ brew bundle
 
 This setup uses **mise** (config at `mise/config.toml`) for managing tool versions:
 
+- Go (latest)
 - Node.js (latest)
 - Python (latest)
 - Ruby (3.4)
@@ -55,12 +56,10 @@ This setup uses **mise** (config at `mise/config.toml`) for managing tool versio
 ### Tool Configuration Locations
 
 - **Starship prompt**: `starship/starship.toml` - Custom Dracula theme with emojis and git status
-- **Ghostty terminal**: `ghostty/config` - WildCherry theme with custom keybindings
+- **Ghostty terminal**: `ghostty/config` - Carbonfox theme with custom keybindings
 - **Mise version manager**: `mise/config.toml` - Latest versions of development tools
-- **Git**:
-  - Main config: `git/.gitconfig` - Shared git settings and aliases
-  - User config: `private/git/user.gitconfig` - Personal info (name, email, signing key)
-  - Template: `git/user.gitconfig.template` - Template for new setups
+- **Git**: `git/.gitconfig` and `git/.gitignore_global`
+- **Claude Code**: `claude/` directory
 - **Private configs**: `private/work.zsh` for work-specific settings
 
 ### Custom Features

@@ -11,11 +11,29 @@ Personal development environment configuration for macOS.
 1. Clone this repository:
 
 ```bash
-git clone git@github.com:cchawn/dotfiles.git ~/dotfiles
+git clone git@github.com:ErinCGallagher/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-2. Run the installation script:
+2. Create `~/.gitconfig.user` with your git identity:
+
+```ini
+[user]
+  name = Your Name
+  email = your@email.com
+  signingkey = YOUR_SSH_SIGNING_KEY
+```
+
+To get your SSH signing key:
+
+```bash
+ssh-keygen -t ed25519 -C "your@email.com"
+cat ~/.ssh/id_ed25519.pub
+```
+
+Paste the output as the `signingkey` value above.
+
+3. Run the installation script:
 
 ```bash
 ./install.sh
@@ -28,13 +46,13 @@ The script will:
 - Back up any existing files before linking
 - Set up proper directory structure
 
-3. Restart your terminal or source the config:
+4. Restart your terminal or source the config:
 
 ```bash
 source ~/.zshrc
 ```
 
-4. Install version-managed tools:
+5. Install version-managed tools:
 
 ```bash
 mise install
