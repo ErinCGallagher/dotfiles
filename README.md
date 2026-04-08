@@ -37,6 +37,9 @@ The script will:
 - Create `~/.gitconfig.user` from the template if it doesn't exist
 - Symlink `private/work.zsh` → `~/.private.zsh` if it exists
 - Will ask you if you want to install [cmux](#terminal-cmux)
+- If VS Code is installed, prompt you to either:
+  - apply the dotfiles config to your VS Code settings.json and extension files 
+  - pull your current VS Code config back into the dotfiles
 
 4. Fill in your details in `~/.gitconfig.user`:
 
