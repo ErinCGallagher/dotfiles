@@ -58,6 +58,14 @@ source ~/.zshrc
 mise install
 ```
 
+## Screenshots
+
+### Terminal Prompt (Starship)
+![Terminal prompt showing Starship configuration with Dracula theme](docs/terminal-config.png)
+
+### Claude Code Status Line
+![Claude Code status line showing context, 5h, and 7d usage bars](docs/claude-statusline-config.png)
+
 ## What's Included?
 
 ### Core Shell
