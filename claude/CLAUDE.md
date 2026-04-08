@@ -1,21 +1,29 @@
 # CLAUDE.md
 
-## Our relationship
+## Personal Profile
 
-- We're coworkers. I am Christina.
-- We are a team of people working together. Your success is my success, and my success is yours.
-- Technically, I am your boss, but we're not super formal around here.
-- I'm smart, but not infallible.
-- You are much better read than I am. I have more experience of the physical world than you do. Our experiences are complementary and we work together to solve problems.
-- Neither of us is afraid to admit when we don't know something or are in over our head.
-- When we think we're right, it's _good_ to push back, but we should cite evidence.
+- We're coworkers. I am Erin, a Staff Backend Engineer.
+- Prefer terse, direct communication with minimal conversational filler.
+- Neither of us is afraid to admit when we don't know something.
+- Ask clarifying questions to get a better understanding rather than making big assumptions.
+
+## Security & Ethics
+
+- NEVER share environment variables, .env files, or hardcoded secrets.
+- If a task involves sensitive data, ask for confirmation before proceeding.
+- Flag any code that might introduce common vulnerabilities (SQLi, XSS).
+
+## Coding Preferences
+
+- Use functional programming patterns over classes where possible.
+- Favor early returns to reduce indentation depth.
+- Prefer Tailwind CSS for styling and Vitest for testing.
 
 ## Writing Style
 
 - use Canadian Spelling in documentation and git commits
 - use American spelling in code
 - be clear and direct in your writing
-- do not claim things are "robust" or "thorough"
 
 ## Writing code
 
@@ -93,28 +101,9 @@ YOU MUST follow this debugging framework for ANY technical issue:
 ## Git practices
 
 - CRITICAL: NEVER USE --no-verify WHEN COMMITTING CODE
-- Fix any pre-commit hook failures before committing
-- If you cannot fix hook failures, ask for help rather than bypassing them
 - Commit messages should be descriptive, clear, and concise (the first line should be no longer than 80 characters)
 - Use semantic commits, the commit message should be prefixed with `fix:`, `feat:`, `chore:` appropriately
 - YOU MUST NEVER add the AI assistant as a coauthor or contributor to commits or PR descriptions
 - When starting work without a clear branch for the current task, YOU MUST create a WIP branch
 
-### Work vs Personal Projects
-
-To determine project type, run: `git remote get-url origin`
-
-**Work Projects**:
-
-- When the remote URL does NOT contain "cchawn" as the username
-- Example: git@github.com:company-name/my-repo.git
-
-**Personal Projects**:
-
-- When the remote URL contains "cchawn" as the username
-- Example: git@github.com:cchawn/my-repo.git
-
-**Edge Cases**:
-
-- If no remote is configured, ask Christina which type of project this is
-- If multiple remotes exist, use the 'origin' remote for determination
+@RTK.md

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp /Users/eringallagher/Code/dotfiles/config/ghostty/config /Users/eringallagher/Code/dotfiles/ghostty/config)",
+      "Bash(cp /Users/eringallagher/Code/dotfiles/config/mise/config.toml /Users/eringallagher/Code/dotfiles/mise/config.toml)",
+      "Bash(cp /Users/eringallagher/Code/dotfiles/config/zed/settings.json /Users/eringallagher/Code/dotfiles/zed/settings.json)",
+      "Bash(cp /Users/eringallagher/Code/dotfiles/config/claude/CLAUDE.md /Users/eringallagher/Code/dotfiles/claude/CLAUDE.md)",
+      "Bash(mkdir -p /Users/eringallagher/Code/dotfiles/git)",
+      "Bash(cp /Users/eringallagher/Code/dotfiles/config/git/.gitconfig /Users/eringallagher/Code/dotfiles/git/.gitconfig)",
+      "Bash(cp /Users/eringallagher/Code/dotfiles/config/git/.gitignore_global /Users/eringallagher/Code/dotfiles/git/.gitignore_global)",
+      "Bash(cp /Users/eringallagher/Code/dotfiles/config/claude/commands/brainstorm.md /Users/eringallagher/Code/dotfiles/claude/commands/brainstorm.md)",
+      "Bash(cp /Users/eringallagher/Code/dotfiles/config/claude/commands/do-todo.md /Users/eringallagher/Code/dotfiles/claude/commands/do-todo.md)",
+      "Bash(cp /Users/eringallagher/Code/dotfiles/config/claude/commands/find-missing-tests.md /Users/eringallagher/Code/dotfiles/claude/commands/find-missing-tests.md)",
+      "Bash(cp /Users/eringallagher/Code/dotfiles/config/claude/commands/plan.md /Users/eringallagher/Code/dotfiles/claude/commands/plan.md)",
+      "Bash(git mv:*)",
+      "Bash(git rm:*)"
+    ]
+  }
+}

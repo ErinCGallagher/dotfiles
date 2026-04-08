@@ -50,25 +50,39 @@ main() {
     # Zsh configuration
     create_symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
     
-    # Git configuration
-    create_symlink "$DOTFILES_DIR/config/git/.gitconfig" "$HOME/.gitconfig"
-    create_symlink "$DOTFILES_DIR/config/git/.gitignore_global" "$HOME/.gitignore_global"
-    
+    # Git configuration — lives in private/ so secrets never leave your machine.
+    # git.template/ contains the full config with placeholders; copy it to
+    # private/git/ and fill in your details before running this script.
+    mkdir -p "$DOTFILES_DIR/private/git"
+
+    if [[ ! -f "$DOTFILES_DIR/private/git/.gitconfig" ]]; then
+        cp "$DOTFILES_DIR/git-template/.gitconfig" "$DOTFILES_DIR/private/git/.gitconfig"
+        echo "⚠️  Created private/git/.gitconfig from template — fill in your name, email, and signing key before continuing."
+        exit 1
+    fi
+
+    if [[ ! -f "$DOTFILES_DIR/private/git/.gitignore_global" ]]; then
+        cp "$DOTFILES_DIR/git-template/.gitignore_global" "$DOTFILES_DIR/private/git/.gitignore_global"
+    fi
+
+    create_symlink "$DOTFILES_DIR/private/git/.gitconfig" "$HOME/.gitconfig"
+    create_symlink "$DOTFILES_DIR/private/git/.gitignore_global" "$HOME/.gitignore_global"
+
     # Starship prompt
-    create_symlink "$DOTFILES_DIR/config/starship.toml" "$HOME/.config/starship.toml"
-    
+    create_symlink "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
+
     # Ghostty terminal
-    create_symlink "$DOTFILES_DIR/config/ghostty/config" "$HOME/.config/ghostty/config"
-    
+    create_symlink "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/config"
+
     # Mise version manager
-    create_symlink "$DOTFILES_DIR/config/mise/config.toml" "$HOME/.config/mise/config.toml"
+    create_symlink "$DOTFILES_DIR/mise/config.toml" "$HOME/.config/mise/config.toml"
 
     # Zed editor
-    create_symlink "$DOTFILES_DIR/config/zed/settings.json" "$HOME/.config/zed/settings.json"
+    create_symlink "$DOTFILES_DIR/zed/settings.json" "$HOME/.config/zed/settings.json"
 
     # Claude Code configuration (if it exists)
-    if [[ -f "$DOTFILES_DIR/config/claude/CLAUDE.md" ]]; then
-        create_symlink "$DOTFILES_DIR/config/claude" "$HOME/.claude"
+    if [[ -f "$DOTFILES_DIR/claude/CLAUDE.md" ]]; then
+        create_symlink "$DOTFILES_DIR/claude" "$HOME/.claude"
     fi
     
     # Source private configurations if they exist

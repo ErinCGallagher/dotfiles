@@ -7,14 +7,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a **dotfiles repository** that manages personal development environment configuration for macOS. The repository follows a clean structure separating configuration files by tool/application.
 
 ### Key Structure
-- `config/` - All configuration files organized by tool
-- `private/` - Private/sensitive configurations (e.g., work-specific settings)
+
+- `ghostty/` - Ghostty terminal configuration
+- `mise/` - Mise version manager configuration
+- `starship/` - Starship prompt configuration
+- `zed/` - Zed editor configuration
+- `git/` - Git configuration
+- `claude/` - Claude Code configuration
 - `zsh/` - Shell configuration and scripts
+- `private/` - Private/sensitive configurations (e.g., work-specific settings)
 - `Brewfile` - Homebrew dependencies for the entire setup
 
 ## Common Development Commands
 
 ### Initial Setup
+
 ```bash
 # Install all dependencies
 brew bundle
@@ -28,31 +35,38 @@ brew bundle
 ```
 
 ### Version Management
-This setup uses **mise** (config at `config/mise/config.toml`) for managing tool versions:
+
+This setup uses **mise** (config at `mise/config.toml`) for managing tool versions:
+
+- Go (latest)
 - Node.js (latest)
-- Python (latest) 
+- Python (latest)
 - Ruby (3.4)
 - Deno (latest)
 - Claude Code CLI (latest)
 
 ### Shell Environment
+
 - **Shell**: zsh with custom configuration
-- **Prompt**: Starship with custom Dracula theme (`config/starship.toml`)
-- **Terminal**: Ghostty with custom theming (`config/ghostty/config`)
+- **Prompt**: Starship with custom Dracula theme (`starship/starship.toml`)
+- **Terminal**: Ghostty with custom theming (`ghostty/config`)
 - **Environment**: direnv for auto-loading project environments
 
 ## Configuration Architecture
 
 ### Tool Configuration Locations
-- **Starship prompt**: `config/starship.toml` - Custom Dracula theme with emojis and git status
-- **Ghostty terminal**: `config/ghostty/config` - WildCherry theme with custom keybindings
-- **Mise version manager**: `config/mise/config.toml` - Latest versions of development tools
-- **Git**: Configuration stored in `config/git/` directory
+
+- **Starship prompt**: `starship/starship.toml` - Custom Dracula theme with emojis and git status
+- **Ghostty terminal**: `ghostty/config` - Carbonfox theme with custom keybindings
+- **Mise version manager**: `mise/config.toml` - Latest versions of development tools
+- **Git**: `git/.gitconfig` and `git/.gitignore_global`
+- **Claude Code**: `claude/` directory
 - **Private configs**: `private/work.zsh` for work-specific settings
 
 ### Custom Features
+
 - **Starship theme**: Custom Dracula palette with emoji-rich git status indicators
-- **Ghostty keybindings**: 
+- **Ghostty keybindings**:
   - `cmd+d` / `cmd+shift+d` for pane splitting
   - `cmd+plus/minus/0` for font size control
 - **Shell integration**: Full zsh integration with cursor, sudo, and title features
@@ -60,8 +74,9 @@ This setup uses **mise** (config at `config/mise/config.toml`) for managing tool
 ## Development Notes
 
 This is a **configuration-only repository** - no building, testing, or compilation required. Changes take effect through:
+
 - Shell restart for zsh/starship changes
-- Terminal restart for ghostty changes  
+- Terminal restart for ghostty changes
 - `mise install` for version changes
 
 The setup is designed for macOS with Homebrew and assumes FiraCode Nerd Font for proper icon display in the terminal prompt.
