@@ -39,7 +39,15 @@ cat ~/.ssh/id_ed25519.pub
 
 Paste the output as the `signingkey` value above.
 
-3. Run the installation script:
+3. *(Optional)* Add work-specific config to `private/work.zsh` — this file is gitignored and will be sourced automatically:
+
+```zsh
+# private/work.zsh — machine-specific PATH entries, secrets, work aliases, etc.
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export GITHUB_TOKEN=...
+```
+
+4. Run the installation script:
 
 ```bash
 ./install.sh
@@ -50,15 +58,15 @@ The script will:
 - Install all Homebrew dependencies from the Brewfile
 - Create symlinks for all configuration files
 - Back up any existing files before linking
-- Set up proper directory structure
+- Symlink `private/work.zsh` → `~/.private.zsh` if it exists
 
-4. Restart your terminal or source the config:
+5. Restart your terminal or source the config:
 
 ```bash
 source ~/.zshrc
 ```
 
-5. Install version-managed tools:
+6. Install version-managed tools:
 
 ```bash
 mise install

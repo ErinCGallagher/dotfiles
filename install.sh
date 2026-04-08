@@ -89,15 +89,9 @@ main() {
         create_symlink "$DOTFILES_DIR/claude" "$HOME/.claude"
     fi
     
-    # Source private configurations if they exist
-    if [[ -d "$DOTFILES_DIR/private" ]]; then
-        log "Private directory found - symlinking private configs"
-        for private_file in "$DOTFILES_DIR/private"/*; do
-            if [[ -f "$private_file" && "$private_file" != */.keep ]]; then
-                filename=$(basename "$private_file")
-                create_symlink "$private_file" "$HOME/.config/private/$filename"
-            fi
-        done
+    # Private work configuration
+    if [[ -f "$DOTFILES_DIR/private/work.zsh" ]]; then
+        create_symlink "$DOTFILES_DIR/private/work.zsh" "$HOME/.private.zsh"
     fi
     
     log "Installation complete! 🎉"

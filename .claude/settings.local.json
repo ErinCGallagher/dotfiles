@@ -7,7 +7,12 @@
       "Bash(git commit:*)",
       "Bash(mkdir -p /Users/eringallagher/Code/dotfiles/docs)",
       "Bash(cp /Users/eringallagher/Desktop/terminal-config.png /Users/eringallagher/Code/dotfiles/docs/)",
-      "Bash(cp /Users/eringallagher/Desktop/claude-statusline-config.png /Users/eringallagher/Code/dotfiles/docs/)"
+      "Bash(cp /Users/eringallagher/Desktop/claude-statusline-config.png /Users/eringallagher/Code/dotfiles/docs/)",
+      "Bash(/Users/eringallagher/Code/dotfiles/private/work.zsh:*)",
+      "Bash(ln:*)",
+      "Read(//opt/homebrew/Cellar/openjdk/25.0.2/bin/**)",
+      "Read(//opt/homebrew/Cellar/postgresql@17/17.8/bin/**)",
+      "Read(//opt/homebrew/Cellar/bison/3.8.2/bin/**)"
     ]
   }
 }
