@@ -10,7 +10,7 @@ Personal development environment configuration for macOS.
 
 ## Setup
 
-**Prerequisites:** macOS + [Homebrew](https://brew.sh/) + [1Password for SSH & Git](https://developer.1password.com/docs/ssh/).
+**Prerequisites:** macOS + [Homebrew](https://brew.sh/)
 
 ### Quick Installation
 
