@@ -2,6 +2,12 @@
 
 Personal development environment configuration for macOS.
 
+### Terminal Prompt (Starship)
+![Terminal prompt showing Starship configuration with Dracula theme](docs/terminal-config.png)
+
+### Claude Code Status Line
+![Claude Code status line showing context, 5h, and 7d usage bars](docs/claude-statusline-config.png)
+
 ## Setup
 
 **Prerequisites:** macOS + [Homebrew](https://brew.sh/) + [1Password for SSH & Git](https://developer.1password.com/docs/ssh/).
@@ -57,14 +63,6 @@ source ~/.zshrc
 ```bash
 mise install
 ```
-
-## Screenshots
-
-### Terminal Prompt (Starship)
-![Terminal prompt showing Starship configuration with Dracula theme](docs/terminal-config.png)
-
-### Claude Code Status Line
-![Claude Code status line showing context, 5h, and 7d usage bars](docs/claude-statusline-config.png)
 
 ## What's Included?
 
